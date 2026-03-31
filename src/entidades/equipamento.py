@@ -2,7 +2,11 @@ equipamentos = []
 
 def get_equipamentos(): return equipamentos
 
-def inserir_equipamento(equipamento): equipamentos.append(equipamento)
+def inserir_equipamento(equipamento): equipamentos.append(equipamento):
+    nome_equipamentos = equipamentos.nome
+    if nome_equipamentos not in equipamentos.keys():
+        equipamentos[nome_equipamentos] = equipamentos
+    else: print('Equipamentos ' + nome_equipamentos + ' Já tem cadastro!')
 
 def selecionar_equipamentos(prefixo_fabricante=None, peso_máximo_kg=None, crítico=None):
     filtros = '\nFiltros -- '

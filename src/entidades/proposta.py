@@ -26,7 +26,7 @@ def selecionar_propostas(data_mínima_proposta=None, destino_exploração_espaci
     filtros = '\nFiltros -- '
     if data_mínima_proposta is not None: filtros += 'data mínima da proposta: ' + str(data_mínima_proposta)
     if destino_exploração_espacial is not None: filtros += ' - destino da exploração: ' + destino_exploração_espacial
-    if prefixo_agência_responsável_planejamento is not None: filtros += ' - prefixo da agência: ' + prefixo_agência_responsável_planejamento
+    if prefixo_agência_responsável_planejamento is not None: filtros += ' - prefixo da agência responsável do planejamento: ' + prefixo_agência_responsável_planejamento
     if peso_máximo_kg_equipamento is not None: filtros += ' - peso máximo do equipamento: ' + str(peso_máximo_kg_equipamento) + ' kg'
     propostas_selecionadas = []
     for proposta in propostas:

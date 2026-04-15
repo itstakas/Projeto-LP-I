@@ -35,7 +35,7 @@ class Data:
         if self.mês < data.mês: return True
         elif self.mês > data.mês: return False
         if self.dia < data.dia: return True
-        elif self.dia > data.dia: return False
+        elif self.ano > data.ano: return False
         return False
 
     def __ge__(self, data):

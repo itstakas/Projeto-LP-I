@@ -1,22 +1,15 @@
-explorações_espaciais = []
+explorações_espaciais = {}
 
 def get_explorações_espaciais(): return explorações_espaciais
 
-def inserir_exploração_espacial(exploração_espacial): explorações_espaciais.append(exploração_espacial)
-
-def selecionar_explorações_espaciais(destino=None, duração_máxima_dias=None, tripulada=None):
-    filtros = '\nFiltros -- '
-    if destino is not None: filtros += 'destino: ' + destino
-    if duração_máxima_dias is not None: filtros += ' - duração máxima: ' + str(duração_máxima_dias) + ' dias'
-    if tripulada is True: filtros += ' - tripulada'
-    elif tripulada is False: filtros += ' - não tripulada'
-    explorações_selecionadas = []
-    for exploração_espacial in explorações_espaciais:
-        if destino is not None and exploração_espacial.destino != destino: continue
-        if duração_máxima_dias is not None and exploração_espacial.duração_dias > duração_máxima_dias: continue
-        if tripulada in (True, False) and exploração_espacial.tripulada != tripulada: continue
-        explorações_selecionadas.append(exploração_espacial)
-    return filtros, explorações_selecionadas
+def inserir_exploração_espacial(exploração_espacial):
+    nome_exploração_espacial = exploração_espacial.nome
+    if nome_exploração_espacial not in explorações_espaciais.keys():
+        explorações_espaciais[nome_exploração_espacial] = exploração_espacial
+        return True
+    else:
+        print('Exploração Espacial ' + nome_exploração_espacial + ' já tem cadastro')
+        return False
 
 class ExploraçãoEspacial:
     def __init__(self, nome, destino, duração_dias, tripulada):

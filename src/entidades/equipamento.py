@@ -4,6 +4,7 @@ def get_equipamentos(): return equipamentos
 
 def inserir_equipamento(equipamento): equipamentos.append(equipamento)
 
+
 def selecionar_equipamentos(prefixo_fabricante=None, peso_máximo_kg=None, crítico=None):
     filtros = '\nFiltros -- '
     if prefixo_fabricante is not None: filtros += 'prefixo do fabricante: ' + prefixo_fabricante

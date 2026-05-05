@@ -4,6 +4,7 @@ def imprimir_objetos(cabeçalho, objetos, filtros=None):
     for índice, objeto in enumerate(objetos):
         imprimir_objeto(índice, str(objeto))
 
+
 def imprimir_objeto(índice, objeto_str):
     formato = '{} {} {}'
     ordem = índice + 1

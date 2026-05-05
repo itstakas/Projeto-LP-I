@@ -2,7 +2,9 @@ explorações_espaciais = []
 
 def get_explorações_espaciais(): return explorações_espaciais
 
+
 def inserir_exploração_espacial(exploração_espacial): explorações_espaciais.append(exploração_espacial)
+
 
 def selecionar_explorações_espaciais(destino=None, duração_máxima_dias=None, tripulada=None):
     filtros = '\nFiltros -- '
@@ -18,12 +20,14 @@ def selecionar_explorações_espaciais(destino=None, duração_máxima_dias=None
         explorações_selecionadas.append(exploração_espacial)
     return filtros, explorações_selecionadas
 
+
 class ExploraçãoEspacial:
     def __init__(self, nome, destino, duração_dias, tripulada):
         self.nome = nome
         self.destino = destino if destino in ('lua', 'marte', 'órbita_terrestre', 'asteroide', 'júpiter') else 'indefinido'
         self.duração_dias = duração_dias
         self.tripulada = tripulada
+
 
     def __str__(self):
         if self.tripulada: tripulada_str = 'tripulada |'
